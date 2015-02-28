@@ -1,0 +1,194 @@
+#! /bin/csh -f
+#
+#  Create mpeg animation file directly from a series of image files.
+#
+#  Original script from Wes Barris, MSC, Inc.
+#  wesb@msc.edu
+#
+#  Additions by Matt Hughes, University of Minnesota Supercomputer Institute.
+#  3/23/94
+#  
+# Define the defaults
+#
+@ fs         = 1		# starting frame number
+@ fe         = 1		# ending frame number
+@ fi         = 1		# frame increment
+set base     = "image"	# default basename
+set TMPDIR   = /tmp		# default temp directory
+
+if ( $#argv == 0 ) then
+      echo "Usage: makempeg [-fs start] [-fe end] [-fi increment] [-base basename] [-ext extension]"
+      echo "" 
+      echo "      	fs = fe = fi = 1"
+      echo "      	base = image"
+      exit
+endif
+#
+#  Parse out arguments.
+#
+@ n = 1
+while ($n <= $#argv)
+   if ("$argv[$n]" == "-fs") then
+      @ n++
+      @ fs = $argv[$n]
+   else if ("$argv[$n]" == "-fe") then
+      @ n++
+      @ fe = $argv[$n]
+   else if ("$argv[$n]" == "-fi") then
+      @ n++
+      @ fi = $argv[$n]
+   else if ("$argv[$n]" == "-base") then
+      @ n++
+      set base = $argv[$n]
+   else if ("$argv[$n]" == "-ext") then
+      @ n++
+      set ext = $argv[$n]
+   else
+      echo "Usage: makempeg [-fs start] [-fe end] [-fi increment] [-base basename] [-ext extension]"
+      echo "" 
+      echo "      	fs = fe = fi = 1"
+      echo "      	base = image"
+      exit
+   endif
+   @ n++
+end
+#
+#  Find out what image format we are dealing with.
+#
+if ($?ext) then
+   set file = `echo $base $fs $ext | awk '{printf "%s.%04d.%s",$1,$2,$3}'` 
+   if (-e $file) then
+   else
+      echo I can\'t find $file.
+      exit
+   endif
+else
+   set file = `echo $base $fs | awk '{printf "%s.%04d", $1,$2}'` 
+   if (-e $file.rle) then
+      set ext = rle
+   else if (-e $file.sgi) then
+      set ext = sgi
+   else if (-e $file.rgb) then
+      set ext = rgb
+      set CONV = sgitopnm
+   else if (-e $file.ppm) then
+      set ext = ppm
+   else if (-e $file.gif) then
+      set ext = gif
+   else if (-e $file.tiff) then
+      set ext = tiff
+   else if (-e $file.xwd) then
+      set ext = xwd
+   else if (-e $file.jpg) then
+      set ext = jpg
+   else if (-e $file.tga) then
+      set ext = tga
+   else
+      echo I can\'t find $file.\*
+      exit
+   endif
+endif
+#
+#  Select an image converter based on the filename extension.
+#
+if ($ext == rle) then
+   set CONV = rletopnm			# part of the Utah Raster Toolkit
+else if ($ext == sgi || $ext == rgb) then
+   set CONV = sgitopnm			# part of NETPBM
+else if ($ext == ppm) then
+   set CONV = cat
+else if ($ext == gif) then
+   set CONV = giftopnm			# part of NETPBM
+else if ($ext == tiff) then
+   set CONV = tifftopnm			# part of NETPBM
+else if ($ext == xwd) then
+   set CONV = xwdtopnm			# part of NETPBM
+else if ($ext == tga) then
+   set CONV = tgatoppm			# part of NETPBM
+else if ($ext == jpg) then
+   set CONV = djpeg	# part of The Independent JPEG Group's JPEG software
+else
+   echo Unknown file extension\: $ext
+   exit
+endif
+#
+# get size of the first image and use for the rest.
+#
+set file = `echo $base $fs $ext | awk '{printf "%s.%04d.%s",$1,$2,$3}'` 
+set junk = `$CONV $file | head -2`
+@ width = $junk[2]
+@ height = $junk[3]
+echo ""
+echo ""
+echo images have dimensions $width x $height
+sleep 2
+#
+#  Set up a temporary location (with sufficient space) for intermediate
+#  files to go.
+#
+if (-d $TMPDIR) then
+   echo $TMPDIR exists
+else
+   echo Creating $TMPDIR
+   mkdir $TMPDIR
+endif
+#
+# loop over all selected images
+#
+@ iin = $fs
+@ iout = $fs
+while ( $iin <= $fe )
+  set file = `echo $base $iin $ext | awk '{printf "%s.%04d.%s",$1,$2,$3}'` 
+  set outname = $TMPDIR/$base.$$.$iout
+  echo Converting $file to $outname .Y .U .V
+  $CONV $file | ppmtoyuvsplit $outname
+  @ iin += $fi
+  @ iout++
+end
+@ iout--	# reset to the last actual frame output
+#
+#  Compress into an mpeg movie file.
+#  NOTE: An option has to be added if the width of the image is not evenly
+#        divisible by 16.
+#
+set junk = `echo $width 16 | awk '{print $1/$2}'`
+@ div16 = `echo $junk | awk -F. '{print $2}'`
+if ($div16 == 0) then
+   set junk = `echo $height 16 | awk '{print $1/$2}'`
+   @ div16 = `echo $junk | awk -F. '{print $2}'`
+   if ($div16 == 0) then
+      set PF = ""       # only if both X and Y are evenly divisible by 16
+   else
+      set PF = "-PF"
+   endif
+else
+   set PF = "-PF"
+endif
+#
+#  ppmtoyuvsplit may chop off an odd row and/or column
+#
+set junk = `echo $width 2 | awk '{print $1/$2}'`
+@ xeven = `echo $junk | awk -F. '{print $2}'`
+set junk = `echo $height 2 | awk '{print $1/$2}'`
+@ yeven = `echo $junk | awk -F. '{print $2}'`
+#
+echo Width Height $width $height      in 
+#
+if ( $xeven != 0 ) @ width --
+if ( $yeven != 0 ) @ height --
+#
+echo Width Height $width $height     out 
+sleep 2
+set MPEGNAME = "$base".mpg
+~/mathematica/libs/mpeg -a $fs -b $iout -h $width -v $height $PF $TMPDIR/$base.$$. -s $MPEGNAME
+#
+#  Clean up and instruct the user.
+#
+/bin/rm $TMPDIR/$base.$$.*.Y
+/bin/rm $TMPDIR/$base.$$.*.U
+/bin/rm $TMPDIR/$base.$$.*.V
+#
+echo  "To see segment, type mpeg_play $MPEGNAME"
+echo  "or"
+echo  "mpeg_play -dither color $MPEGNAME"
+echo  ""
