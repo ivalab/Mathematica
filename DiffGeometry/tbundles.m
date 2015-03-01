@@ -10,13 +10,13 @@
 BeginPackage["TBundles`"];
 
 (*--Load libraries--*)
-Needs["Objects`","mathematica/libs/objects.m"];
-Needs["Euclidean`","mathematica/libs/euclidean.m"];
-Needs["Vectors`","mathematica/libs/vectors.m"];
-Needs["Tangents`","mathematica/libs/tangents.m"];
-Needs["Bundles`","mathematica/libs/bundles.m"];
-Needs["Manifolds`","mathematica/libs/manifolds.m"];
-Needs["TangentManifolds`","mathematica/libs/tmanifolds.m"];
+Needs["Objects`","iamatica/libs/objects.m"];
+Needs["Euclidean`","iamatica/DiffGeometry/euclidean.m"];
+Needs["Vectors`","iamatica/DiffGeometry/vectors.m"];
+Needs["Tangents`","iamatica/DiffGeometry/tangents.m"];
+Needs["Bundles`","iamatica/DiffGeometry/bundles.m"];
+Needs["Manifolds`","iamatica/DiffGeometry/manifolds.m"];
+Needs["TangentManifolds`","iamatica/DiffGeometry/tmanifolds.m"];
 
 
 (*--Define objects--*)

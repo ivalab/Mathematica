@@ -1,3 +1,21 @@
+(*========================== Averaging Theory ==========================*)
+(*
+
+  This package implements some of the basic equations associated to
+  averaging theory.  At least first order is done, but possible second
+  or higher.  
+
+
+  Author:       Patricio A. Vela
+  Created:      2002/06/07 
+  Modified:     2015/03/01
+
+  NOTES: 
+    - At some point, the different objects need to be separated.
+    - Definitely the code needs some cleaning up and documentation.
+
+*)
+(*========================== Averaging Theory ==========================*)
 BeginPackage["Averaging`"];
 
 fAverage::usage=

@@ -10,14 +10,15 @@
 *)
 BeginPackage["PrincipalBundle`"];
 
-Needs["Objects`","mathematica/libs/objects.m"];
-Needs["Euclidean`","mathematica/libs/euclidean.m"];
-Needs["Vectors`","mathematica/libs/vectors.m"];
-Needs["Manifolds`","mathematica/libs/manifolds.m"];
-Needs["Bundles`","mathematica/libs/bundles.m"];
-Needs["LieGroups`","mathematica/libs/liegroups.m"];
-(*Needs["LagrangianMechanics`","mathematica/libs/lagrangian.m"];*)
-(*Needs["Equations`","mathematica/libs/equations.m"];*)
+Needs["Objects`","ivamatica/Basic/objects.m"];
+Needs["Euclidean`","ivamatica/DiffGeometry/euclidean.m"];
+Needs["Vectors`","ivamatica/DiffGeometry/vectors.m"];
+Needs["Manifolds`","ivamatica/DiffGeometry/manifolds.m"];
+Needs["Bundles`","ivamatica/DiffGeometry/bundles.m"];
+Needs["LieGroups`","ivamatica/GeoMechanics/liegroups.m"];
+
+(*Needs["LagrangianMechanics`","ivamatica/libs/lagrangian.m"];*)
+(*Needs["Equations`","ivamatica/libs/equations.m"];*)
 
 gQ::usage="Returns the principal bundle manifold object type.";
 gM::usage="Returns the base space object type.";

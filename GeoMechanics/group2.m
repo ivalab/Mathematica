@@ -7,8 +7,8 @@
 *)
 BeginPackage["LieGroups`"];
 
-Needs["Objects`","mathematica/libs/objects.m"];
-Needs["Manifolds`","mathematica/libs/manifolds.m"];
+Needs["Objects`","ivamatica/Basic/objects.m"];
+Needs["Manifolds`","ivamatica/DiffGeometry/manifolds.m"];
 
 SE2::usage="Provides the object functionality of the SE2 group.";
 se2::usage="Provides the object functionality of the se2 Lie algebra.";

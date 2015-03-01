@@ -10,8 +10,8 @@
 *)
 BeginPackage["Vectors`"];
 
-Needs["Objects`","mathematica/libs/objects.m"];
-(*Needs["Euclidean`","mathematica/libs/euclidean.m"];*)
+Needs["Objects`","ivamatica/Basic/objects.m"];
+(*Needs["Euclidean`","ivamatica/DiffGeometry/euclidean.m"];*)
 
 Vector::usage="Provides object functionality of a vector space."; 
 Covector::usage="Provides object functionality of a covector space.";

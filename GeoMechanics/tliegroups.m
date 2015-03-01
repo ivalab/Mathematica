@@ -8,14 +8,14 @@
 *)
 BeginPackage["TangentLieGroups`"];
 
-Needs["Objects`","mathematica/libs/objects.m"];
-Needs["Euclidean`","mathematica/libs/euclidean.m"];
-Needs["Bundles`","mathematica/libs/bundles.m"];
-Needs["Vectors`","mathematica/libs/vectors.m"];
-Needs["Tangents`","mathematica/libs/tangents.m"];
-Needs["Manifolds`","mathematica/libs/manifolds.m"];
-Needs["TangentManifolds`","mathematica/libs/tmanifolds.m"];
-Needs["LieGroups`","mathematica/libs/liegroups.m"];
+Needs["Objects`","ivamatica/Basic/objects.m"];
+Needs["Euclidean`","ivamatica/DiffGeometry/euclidean.m"];
+Needs["Bundles`","ivamatica/DiffGeometry/bundles.m"];
+Needs["Vectors`","ivamatica/DiffGeometry/vectors.m"];
+Needs["Tangents`","ivamatica/DiffGeometry/tangents.m"];
+Needs["Manifolds`","ivamatica/DiffGeometry/manifolds.m"];
+Needs["TangentManifolds`","ivamatica/DiffGeometry/tmanifolds.m"];
+Needs["LieGroups`","ivamatica/GeoMechanics/liegroups.m"];
 
 (*--This package reads in from several files since there are many
   Lie groups that can be defined.  This file contains the basic

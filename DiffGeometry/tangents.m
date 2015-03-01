@@ -11,10 +11,10 @@
 BeginPackage["Tangents`"];
 
 (*--Load needed libraries--*)
-Needs["Objects`","mathematica/libs/objects.m"];
-Needs["Euclidean`","mathematica/libs/euclidean.m"];
-Needs["Bundles`","mathematica/libs/bundles.m"];
-Needs["Vectors`","mathematica/libs/vectors.m"];
+Needs["Objects`","ivamatica/Basic/objects.m"];
+Needs["Euclidean`","ivamatica/DiffGeometry/euclidean.m"];
+Needs["Bundles`","ivamatica/DiffGeometry/bundles.m"];
+Needs["Vectors`","ivamatica/DiffGeometry/vectors.m"];
 
 
 (*--Define tangent and cotangent spaces--*)

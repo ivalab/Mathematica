@@ -1,5 +1,23 @@
+(*======================== Lagrangian Mechanics ========================*)
+(*
+
+  Lagrangian mechanics package.  Takes a Lagrangian and works out the
+  associated differential equations.  Includes constrained Lagrangians,
+  reduced Lagrangians, and Lagrange multipliers.  Also computes the
+  fiber derivative, the fiber lift, and other related functions.
+
+  Author:       Patricio A. Vela
+  Created:      2002/XX/XX
+  Modified:     2015/03/01
+
+  NOTES:
+    - Shouldn't the lift be moved elsewhere?  It is trivial lift anyhow.
+
+*)
+(*======================== Lagrangian Mechanics ========================*)
 BeginPackage["LagrangianMechanics`"];
 
+(*============================ Dependencies ============================*)
 Needs["Objects`","ivamatica/Basic/objects.m"];
 Needs["Euclidean`","ivamatica/DiffGeometry/euclidean.m"];
 Needs["Bundles`","ivamatica/DiffGeometry/bundles.m"];
@@ -9,7 +27,7 @@ Needs["Manifolds`","ivamatica/DiffGeometry/manifolds.m"];
 Needs["TangentManifolds`","ivamatica/DiffGeometry/tmanifolds.m"];
 Needs["LieGroups`","ivamatica/GeoMechanics/liegroups.m"];
 
-
+(*================================ Usage ===============================*)
 fLagrangeEqns::usage=
   "fLagrangeEqns[Lagrangian, Forces, q, q'] \n
    Solves for Lagrange's equations of motion with forces given a
@@ -32,10 +50,12 @@ fFDer::usage="Fiber derivative of the Lagrangian, L, at the point (q, q').";
 fLift::usage="fLift[Y]\n Lift the vector Y to T2Q";
 
 
+(*========================== Package Functions =========================*)
 Begin["`Private`"];
 
-(*--------------------fLagrangeEqns--------------------*)
-(*Lagrange's equations of motion with forcing
+(*--------------------------- fLagrangeEqns --------------------------*)
+(*
+  Lagrange's equations of motion with forcing
 
   (d/dt) (d L / d q') - (d L / d q) = F 
 
@@ -75,8 +95,9 @@ fLagrangeEqns[L_ , F_ , q_, qp_] := Module[
   ] ]
 ];
 
-(*--------------------fConsLagrangeEqns--------------------*)
-(*Lagrange's equations of motion with forcing for bilaterally 
+(*------------------------- fConsLagrangeEqns ------------------------*)
+(*
+  Lagrange's equations of motion with forcing for bilaterally 
   constrained systems.
 
   (d/dt) (d L / d q') - (d L / d q) = F - lambda . (d phi / d q)
@@ -99,16 +120,17 @@ fConsLagrangeEqns[L_, F_, phi_, q_, qp_, lambda_] :=
       fLagrangeEqns[L, F - lambda D[phi, q], q, qp] ]
   ]; 
 
-(*--------------------gLagrangianMetric--------------------*)
-(*Compute the Lagrangian kinetic energy metric for the Lagrangian
+(*------------------------- gLagrangianMetric ------------------------*)
+(*
+  Compute the Lagrangian kinetic energy metric for the Lagrangian
   given and the configuration tangent space variables passed along.
 *)
 gLagrangianMetric[L_, xp_] := 
-  Table[ D[D[L,xp[[i]]],xp[[j]]] ,
-  {i,Length[xp]},{j,Length[xp]}];
+  Table[ D[D[L,xp[[i]]],xp[[j]]] , {i,Length[xp]},{j,Length[xp]}];
 
-(*--------------------fReduceLagrangian--------------------*)
-(*Reduce a Lagrangian under group symmetries.  This is done
+(*------------------------- fReduceLagrangian ------------------------*)
+(*
+  Reduce a Lagrangian under group symmetries.  This is done
   by solving for the Lagrangian at the group identity.
 *)
 fReduceLagrangian[L_, g_, e_, xi_] := Module[
@@ -124,8 +146,9 @@ fReduceLagrangian[L_, g_, e_, xi_] := Module[
   l
 ];
 
-(*--------------------fReduceTransformation--------------------*)
-(*Reduce a transformation of Lie algebra coordinates under group 
+(*----------------------- fReduceTransformation ----------------------*)
+(*
+  Reduce a transformation of Lie algebra coordinates under group 
   symmetries.  This is done by solving for the transformation
   at the group identity.
 *)
@@ -136,8 +159,9 @@ fReduceTransformation[T_, g_, e_] :=  Module[
   t
 ];
 
-(*-------------------fTransformLagrangian---------------------*)
-(*Transform the Lie algebra basis of the reduced Lagrangian.
+(*---------------------- fTransformLagrangian ------------------------*)
+(*
+  Transform the Lie algebra basis of the reduced Lagrangian.
 *)
 fTransformLagrangian [L_, T_, xi_, e_] := Module[
   {l , f , v} , 
@@ -148,8 +172,9 @@ fTransformLagrangian [L_, T_, xi_, e_] := Module[
   l
 ];
 
-(*-------------------fTransformLagrangian---------------------*)
-(*Transform the tangent space basis of the Lagrangian Matrix.
+(*---------------------- fTransformLagrangian ------------------------*)
+(*
+  Transform the tangent space basis of the Lagrangian Matrix.
 *)
 fTransformLagrangiaMatrix [LM_, T_] := Module[
   {lm, f} , 
@@ -157,8 +182,9 @@ fTransformLagrangiaMatrix [LM_, T_] := Module[
   lm = Transpose[T].LM.T
 ];
 
-(*--------------------fFDer--------------------*)
-(*Fiber derivative of the Lagrangian.
+(*------------------------------- fFDer ------------------------------*)
+(*
+  Fiber derivative of the Lagrangian.
 
   |F L(q,q') = d L(q,q') / d q'
 *)
@@ -173,6 +199,12 @@ fFDer[L_, q_, qdot_] := Module[
   F
 ];
 
+(*-------------------------------- fF --------------------------------*)
+(*
+  Fiber derivative of the reduced Lagrangian.
+
+  |F L(q,q') = d L(q,q') / d q'  <==== CHANGE EQUATION.
+*)
 fF[L_,  xi_] := Module[
   {F} , 
 
@@ -180,8 +212,9 @@ fF[L_,  xi_] := Module[
   F
 ];
 
-(*---------------------fLift--------------------*)
-(*Lift of Y to T2Q.
+(*------------------------------- fLift ------------------------------*)
+(*
+  Lift of Y to T2Q.
 *)
 fLift[Y_] := 
   Join[ Table[ 0, {i, Length[Y]}] , Y];
@@ -190,3 +223,5 @@ fLift[Y_] :=
 End[];
 
 EndPackage[];
+(**)
+(*======================== Lagrangian Mechanics ========================*)

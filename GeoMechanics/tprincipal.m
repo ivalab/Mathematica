@@ -10,18 +10,21 @@
 *)
 BeginPackage["TPrincipalBundle`"];
 
-Needs["Objects`","mathematica/libs/objects.m"];
-Needs["Euclidean`","mathematica/libs/euclidean.m"];
-Needs["Vectors`","mathematica/libs/vectors.m"];
-Needs["Tangents`","mathematica/libs/tangents.m"];
-Needs["Bundles`","mathematica/libs/bundles.m"];
-Needs["Manifolds`","mathematica/libs/manifolds.m"];
-Needs["TangentManifolds`","mathematica/libs/tmanifolds.m"];
-Needs["LieGroups`","mathematica/libs/liegroups.m"];
-(*Needs["LagrangianMechanics`","mathematica/libs/lagrangian.m"];
-Needs["Equations`","mathematica/libs/equations.m"];*)
-Needs["PrincipalBundle`","mathematica/libs/principal.m"];
-Needs["TBundles`","mathematica/libs/tbundles.m"];
+Needs["Objects`","ivamatica/Basic/objects.m"];
+
+Needs["Euclidean`","ivamatica/DiffGeomoetry/euclidean.m"];
+Needs["Vectors`","ivamatica/DiffGeomoetry/vectors.m"];
+Needs["Tangents`","ivamatica/DiffGeomoetry/tangents.m"];
+Needs["Bundles`","ivamatica/DiffGeomoetry/bundles.m"];
+Needs["Manifolds`","ivamatica/DiffGeomoetry/manifolds.m"];
+Needs["TangentManifolds`","ivamatica/DiffGeomoetry/tmanifolds.m"];
+Needs["TBundles`","ivamatica/DiffGeometry/tbundles.m"];
+
+Needs["LieGroups`","ivamatica/GeoMechanics/liegroups.m"];
+Needs["PrincipalBundle`","ivamatica/GeoMechanics/principal.m"];
+
+Needs["Equations`","ivamatica/Dynamics/equations.m"];*)
+(*Needs["LagrangianMechanics`","ivamatica/libs/lagrangian.m"];
 
 
 gTM::usage="Returns the tangent base space object type.";

@@ -1,14 +1,21 @@
-(*--------------------Objects--------------------*)
+(*=============================== Objects ==============================*)
 (*
 
-  objects.m - This package provides the necessary functions and
+  This package provides the necessary functions and
   manipulations required to implement an Object Oriented functionality
   in Mathematica.  All basic object functions are described here.
 
-  Patricio Vela
+
+
+  Author:       Patricio A. Vela
+  Created:      2002/XX/XX
+  Modified:     2015/03/01
+
 *)
+(*=============================== Objects ==============================*)
 BeginPackage["Objects`"];
 
+(*=============== Function help declarations: ==============*)
 Object::usage="Object is the most basic object class.";
 
 oInit::usage="oInit[ObjType, params] \n Initialize the oject.";
@@ -23,6 +30,8 @@ gDim::usage="gDim[obj] \n Returns the length or dimension of the object.";
 
 oCompare::usage="oCompare[Type1, Type2] \n Compares to see if same type";
 
+
+(*========================== Package Functions =========================*)
 Begin["`Private`"];
 
 oInit[Object, val_] ^:= Object[val];
@@ -39,3 +48,4 @@ oCompare[type1_, type2_] := ToString[type1] == ToString[type2];
 End[];
 
 EndPackage[];
+(*=============================== Objects ==============================*)

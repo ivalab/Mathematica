@@ -6,19 +6,25 @@
   Q=MxG where the base space M is a manifold, and the position space G is 
   a Lie group.
 
-  Patricio Vela
+  The package is called BKMM after the paper
+
+  Bloch, Krishnaprasad, Marsden, and Murray
+  Nonholonomic Mechanical Systems with Symmetry
+  ARMA, 1996
+
+  Author:   Patricio A. Vela
 *)
 
 BeginPackage["BKMM`"];
 
-Needs["Objects`","mathematica/libs/objects.m"];
-Needs["Euclidean`","mathematica/libs/euclidean.m"];
-Needs["Vectors`","mathematica/libs/vectors.m"];
-Needs["Manifolds`","mathematica/libs/manifolds.m"];
-Needs["LieGroups`","mathematica/libs/groups.m"];
-Needs["LagrangianMechanics`","mathematica/libs/lagrangian.m"];
-Needs["Equations`","mathematica/libs/equations.m"];
-Needs["PrincipalBundle`","mathematica/libs/principal.m"];
+Needs["Objects`","ivamatica/Basic/objects.m"];
+Needs["Euclidean`","ivamatica/DiffGeometry/euclidean.m"];
+Needs["Vectors`","ivamatica/DiffGeometry/vectors.m"];
+Needs["Manifolds`","ivamatica/DiffGeometry/manifolds.m"];
+Needs["LieGroups`","ivamatica/GeoMechanics/groups.m"];
+Needs["LagrangianMechanics`","ivamatica/Mechanics/lagrangian.m"];
+Needs["Equations`","ivamatica/Dynamics/equations.m"];
+Needs["PrincipalBundle`","ivamatica/GeoMechanics/principal.m"];
 
 pInit::usage="--";
 fDimBase::usage="--";

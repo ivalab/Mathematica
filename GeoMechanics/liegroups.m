@@ -7,11 +7,11 @@
 *)
 BeginPackage["LieGroups`"];
 
-Needs["Objects`","mathematica/libs/objects.m"];
-Needs["Euclidean`","mathematica/libs/euclidean.m"];
-Needs["Vectors`","mathematica/libs/vectors.m"];
-Needs["Manifolds`","mathematica/libs/manifolds.m"];
-Needs["Tangents`","mathematica/libs/tangents.m"];
+Needs["Objects`","ivamatica/Basic/objects.m"];
+Needs["Euclidean`","ivamatica/DiffGeomoetry/euclidean.m"];
+Needs["Vectors`","ivamatica/DiffGeomoetry/vectors.m"];
+Needs["Manifolds`","ivamatica/DiffGeomoetry/manifolds.m"];
+Needs["Tangents`","ivamatica/DiffGeomoetry/tangents.m"];
 Unprotect[Inverse];
 Unprotect[Left];
 Unprotect[Right];

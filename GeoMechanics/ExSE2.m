@@ -6,9 +6,9 @@
   Q=MxG where the base space M is a manifold, and the position space G is 
   a Lie group.
 
-  Patricio Vela
+  Author:   Patricio Vela
 *)
-(*BeginPackage["SE2`"];*)
+BeginPackage["ExSE2`"];
 
 ExSE2::usage="Provides functionality of principal bundle Q = R^n x SE(2)";
 
@@ -137,3 +137,4 @@ Format[ExSE2[object_]] :=
 
 End[];
 
+EndPackage[];

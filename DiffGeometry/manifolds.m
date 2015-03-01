@@ -10,8 +10,8 @@
 BeginPackage["Manifolds`"];
 
 (*--Load needed libraries--*)
-Needs["Objects`","mathematica/libs/objects.m"];
-Needs["Euclidean`","mathematica/libs/euclidean.m"];
+Needs["Objects`","ivamatica/Basic/objects.m"];
+Needs["Euclidean`","ivamatica/DiffGeometry/euclidean.m"];
 
 
 (*--Define objects--*)
