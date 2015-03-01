@@ -6,7 +6,7 @@ Control, Dynamics, and Diff. Geom.
 
 ## Description
 
-The set of libraries is borken down into the following types and
+The set of libraries is broken down into the following types and
 packages:
 
 Name | Provides
@@ -28,7 +28,7 @@ Back when this library was implemented (2001-2003), Mathematica had
 little to no support for object oriented programming.  A quick google
 search seems to indicate that this still holds.  There are more options
 now than before, but nothing seems to be definitive.
-I kludged it in the older Mathematica versions a decade ago, so it   This
+I kludged it in the older Mathematica versions a decade ago, so it 
 needs revision.
 
 **Need Updating.**
@@ -47,11 +47,10 @@ Mathematica then move to Matlab.
 **Others.**
 There are other folk who have implemented stuff like this in
 Mathematica.  For example, the 
-[http://www.cds.caltech.edu/~murray/mlswiki/index.php/Software](software
-associated) to the Murray, Li, Sastry book *A Mathematical Introduction
+[software associated](http://www.cds.caltech.edu/~murray/mlswiki/index.php/Software) to the Murray, Li, Sastry book *A Mathematical Introduction
 to Robotic Manipulation* which is a pretty standard geometric approach
 to the mechanics of manipulation.  Another place might be the 
-[http://motion.me.ucsb.edu/book-gcms/Mma/](packages) from the Bullo and
+[packages](http://motion.me.ucsb.edu/book-gcms/Mma/) from the Bullo and
 Lewis book *Geometric Control of Mechanical Systems.*  Both of these
 examples have different perspectives in relation to the codebase here.
 The former is more concerned with manipulators and manipulation, while
