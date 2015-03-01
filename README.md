@@ -1,4 +1,4 @@
-IvaMatica
+IVAMatica
 ===========
 
 A collection of IVALab's Mathematica homebrew packages, mostly related to
