@@ -10,8 +10,8 @@
 *)
 BeginPackage["Euclidean`"];
 
-Needs["Objects`","mathematica/libs/objects.m"];
-Needs["Vectors`","mathematica/libs/vectors.m"];
+Needs["Objects`","ivamatica/Basic/objects.m"];
+Needs["Vectors`","ivamatica/DiffGeometry/vectors.m"];
 
 Euclidean::usage="Provides object functionality of Euclidean space."; 
 

@@ -9,13 +9,13 @@
 *)
 BeginPackage["Configuration`"];
 
-Needs["Objects`","mathematica/libs/objects.m"];
-Needs["Euclidean`","mathematica/libs/euclidean.m"];
-Needs["Manifolds`","mathematica/libs/manifolds.m"];
-Needs["LieGroups`","mathematica/libs/liegroups.m"];
-Needs["LagrangianMechanics`","mathematica/libs/lagrangian.m"];
-Needs["Equations`","mathematica/libs/equations.m"];
-Needs["PrincipalBundle`","mathematica/libs/principal.m"];
+Needs["Objects`","ivamatica/Basic/objects.m"];
+Needs["Euclidean`","ivamatica/DiffGeometry/euclidean.m"];
+Needs["Manifolds`","ivamatica/DiffGeometry/manifolds.m"];
+Needs["LieGroups`","ivamatica/GoeMechanics/liegroups.m"];
+Needs["LagrangianMechanics`","ivamatica/Mechanics/lagrangian.m"];
+Needs["Equations`","ivamatica/Dyanmics/equations.m"];
+Needs["PrincipalBundle`","ivamatica/GeoMechanics/principal.m"];
 
 Configuration::usage="Provides functionality of principal bundle Q = R^n x SE(2)";
 

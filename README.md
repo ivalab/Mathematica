@@ -1,7 +1,7 @@
-Mathematica
+IvaMatica
 ===========
 
-A collection of Mathematica homebrew packages, mostly related to
+A collection of IVALab's Mathematica homebrew packages, mostly related to
 Control, Dynamics, and Diff. Geom.
 
 ## Description
@@ -15,7 +15,6 @@ Packages  | Package handling, for specifying and loading other packages
 Basic   | Some basic extensions or definitions to Mathematica
 Math      | Basic additions
 Dynamics   | Dynamical Systems
-Averaging | for time-periodic systems and averaging
 DiffGeometry | Differential Geometry
 Graphics   | Graphics and animation
 Mechanics  | Lagrangian (and maybe Hamiltonian) Mechanics
@@ -45,6 +44,23 @@ In general, I found the language design to be a bit opposed to numerical
 implementations, so there was tendency to work things out enough in
 Mathematica then move to Matlab.
 
+**Others.**
+There are other folk who have implemented stuff like this in
+Mathematica.  For example, the 
+[http://www.cds.caltech.edu/~murray/mlswiki/index.php/Software](software
+associated) to the Murray, Li, Sastry book *A Mathematical Introduction
+to Robotic Manipulation* which is a pretty standard geometric approach
+to the mechanics of manipulation.  Another place might be the 
+[http://motion.me.ucsb.edu/book-gcms/Mma/](packages) from the Bullo and
+Lewis book *Geometric Control of Mechanical Systems.*  Both of these
+examples have different perspectives in relation to the codebase here.
+The former is more concerned with manipulators and manipulation, while
+the latter is more concerned with Bullo and Lewis' conception of
+mechanical systems, which tends to focus on the Riemmanian structure.
+There is some overlap with regards to connection forms.
+It does have some pretty good documentation and use cases.  If I can get
+my library cleaned up and modernized, then maybe I can start to
+integrate the complementary aspects from these other two libraries.
 
 ## The packages.
 
@@ -69,12 +85,8 @@ For animation.
 ### Dynamics
 
 For setting up and solving (numerically) dynamical system differential
-equations.
-
-### Averaging
-
-To perform averaging of dynamical systems.
-
+equations.  Includes also a package for performing averaging of
+dynamical systems.
 
 ### Differential Geometry
 

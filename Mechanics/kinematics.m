@@ -10,12 +10,12 @@
 *)
 BeginPackage["Kinematics`"];
 
-Needs["Objects`","mathematica/libs/objects.m"];
-Needs["Euclidean`","mathematica/libs/euclidean.m"];
-Needs["Vectors`","mathematica/libs/vectors.m"];
-Needs["Tangents`","mathematica/libs/tangents.m"];
-Needs["Manifolds`","mathematica/libs/manifolds.m"];
-Needs["LieGroups`", "mathematica/libs/groups.m"];
+Needs["Objects`","ivamatica/Basic/objects.m"];
+Needs["Euclidean`","ivamatica/DiffGeometry/euclidean.m"];
+Needs["Vectors`","ivamatica/DiffGeometry/vectors.m"];
+Needs["Tangents`","ivamatica/DiffGeometry/tangents.m"];
+Needs["Manifolds`","ivamatica/DiffGeometry/manifolds.m"];
+Needs["LieGroups`", "ivamatica/GeoMechanics/groups.m"];
 
 Force::usage="Defines a Force object for distinction. A force is a covector.";
 

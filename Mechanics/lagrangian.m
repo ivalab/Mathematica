@@ -1,13 +1,13 @@
 BeginPackage["LagrangianMechanics`"];
 
-Needs["Objects`","mathematica/libs/objects.m"];
-Needs["Euclidean`","mathematica/libs/euclidean.m"];
-Needs["Bundles`","mathematica/libs/bundles.m"];
-Needs["Vectors`","mathematica/libs/vectors.m"];
-Needs["Tangents`","mathematica/libs/tangents.m"];
-Needs["Manifolds`","mathematica/libs/manifolds.m"];
-Needs["TangentManifolds`","mathematica/libs/tmanifolds.m"];
-Needs["LieGroups`","mathematica/libs/liegroups.m"];
+Needs["Objects`","ivamatica/Basic/objects.m"];
+Needs["Euclidean`","ivamatica/DiffGeometry/euclidean.m"];
+Needs["Bundles`","ivamatica/DiffGeometry/bundles.m"];
+Needs["Vectors`","ivamatica/DiffGeometry/vectors.m"];
+Needs["Tangents`","ivamatica/DiffGeometry/tangents.m"];
+Needs["Manifolds`","ivamatica/DiffGeometry/manifolds.m"];
+Needs["TangentManifolds`","ivamatica/DiffGeometry/tmanifolds.m"];
+Needs["LieGroups`","ivamatica/GeoMechanics/liegroups.m"];
 
 
 fLagrangeEqns::usage=

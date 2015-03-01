@@ -10,9 +10,9 @@
 BeginPackage["Bundles`"];
 
 (*--Load libraries--*)
-Needs["Objects`","mathematica/libs/objects.m"];
-Needs["Vectors`","mathematica/libs/vectors.m"];
-Needs["Euclidean`","mathematica/libs/euclidean.m"];
+Needs["Objects`","ivamatica/Basic/objects.m"];
+Needs["Vectors`","ivamatica/DiffGeometry/vectors.m"];
+Needs["Euclidean`","ivamatica/DiffGeometry/euclidean.m"];
 
 
 (*--Define objects--*)

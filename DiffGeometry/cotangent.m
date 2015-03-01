@@ -10,7 +10,7 @@
 *)
 BeginPackage["Euclidean`"];
 
-Needs["Objects`","mathematica/libs/objects.m"];
+Needs["Objects`","ivamatica/Basic/objects.m"];
 
 Euclidean::usage="Provides object functionality of Euclidean space."; 
 TEuclidean::usage="The Tangent Euclidean space.";
