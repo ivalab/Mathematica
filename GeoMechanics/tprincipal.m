@@ -23,8 +23,8 @@ Needs["TBundles`","ivamatica/DiffGeometry/tbundles.m"];
 Needs["LieGroups`","ivamatica/GeoMechanics/liegroups.m"];
 Needs["PrincipalBundle`","ivamatica/GeoMechanics/principal.m"];
 
+(*Needs["LagrangianMechanics`","ivamatica/Mechanics/lagrangian.m"];
 Needs["Equations`","ivamatica/Dynamics/equations.m"];*)
-(*Needs["LagrangianMechanics`","ivamatica/libs/lagrangian.m"];
 
 
 gTM::usage="Returns the tangent base space object type.";
@@ -69,7 +69,7 @@ iGROUPV		= TBundles`Private`iFIBERV;
 
 End[];
 
-<<mathematica/libs/TExTSE2.m
+<<ivamatica/GeoMechanics/TExTSE2.m
 
 Begin["Private`"];
 

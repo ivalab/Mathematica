@@ -17,8 +17,8 @@ Needs["Manifolds`","ivamatica/DiffGeometry/manifolds.m"];
 Needs["Bundles`","ivamatica/DiffGeometry/bundles.m"];
 Needs["LieGroups`","ivamatica/GeoMechanics/liegroups.m"];
 
-(*Needs["LagrangianMechanics`","ivamatica/libs/lagrangian.m"];*)
-(*Needs["Equations`","ivamatica/libs/equations.m"];*)
+(* Needs["LagrangianMechanics`","ivamatica/Mechanics/lagrangian.m"]; *)
+(* Needs["Equations`","ivamatica/Dynamics/equations.m"]; *)
 
 gQ::usage="Returns the principal bundle manifold object type.";
 gM::usage="Returns the base space object type.";
@@ -66,7 +66,6 @@ iGROUP		= Bundles`Private`iFIBER;;	(* group variables. *)
 
 End[];
 
-<<mathematica/libs/ExSE2.m
-
+<<ivamatica/GeoMechanics/ExSE2.m
 
 EndPackage[];

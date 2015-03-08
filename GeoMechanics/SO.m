@@ -1,3 +1,3 @@
 
 
-<<mathematica/libs/SO3.m;
+<<ivamatica/GeoMechanics/SO3.m;

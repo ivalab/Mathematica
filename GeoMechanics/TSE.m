@@ -1,3 +1,3 @@
 
 
-<<mathematica/libs/TSE2.m;
+<<"ivamatica/GeoMechanics/TSE2.m";

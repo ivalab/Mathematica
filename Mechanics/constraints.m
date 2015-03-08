@@ -1,6 +1,6 @@
 BeginPackage["Constraints`"];
 
-Needs["LinearAlgebra`MatrixManipulation`"];
+(* Needs["LinearAlgebra`MatrixManipulation`"]; *)
 
 pDimConstraints::usage="fDimConstraints[W] \n Determines the dimension
 of the constraint distribution given by W q' = 0.";

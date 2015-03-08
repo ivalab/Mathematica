@@ -89,8 +89,8 @@ StructureConstants[LA_, T_] := Module[
 
 End[];
 
-<<mathematica/libs/SE.m;
-<<mathematica/libs/SO.m;
+<<ivamatica/GeoMechanics/SE.m;
+<<ivamatica/GeoMechanics/SO.m;
 
 
 Protect[Inverse];

@@ -12,10 +12,9 @@
 *)
 BeginPackage["Binary`"];
 
-Needs["Objects`","mathematica/libs/objects.m"];
+Needs["Objects`","ivamativa/Basic/objects.m"];
 
 Binary::usage="Binary is used for loading specific classes.";
-
 oTest::usage="oTest[b] \n Test to see if b has any True values.";
 
 Begin["`Private`"];
@@ -23,6 +22,8 @@ Begin["`Private`"];
 iLEN = 1;
 iVAL = 2;
 
+(* Will give error saying that Integer tag is protected. *)
+(* Don't know why. This is new. Ignoring for now. *)
 oInit[Binary, len_Integer] ^:= Binary[{len, 0}];
 oInit[Binary, len_Integer, val_Integer] ^:= Binary[{len, val}];
 

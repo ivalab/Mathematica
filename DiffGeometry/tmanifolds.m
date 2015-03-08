@@ -11,12 +11,12 @@
 BeginPackage["TangentManifolds`"];
 
 (*--Load needed libraries--*)
-Needs["Objects`","iamatica/Basic/objects.m"];
-Needs["Euclidean`","iamatica/DiffGeometry/euclidean.m"];
-Needs["Bundles`","iamatica/DiffGeometry/bundles.m"];
-Needs["Vectors`","iamatica/DiffGeometry/vectors.m"];
-Needs["Tangents`","iamatica/DiffGeometry/tangents.m"];
-Needs["Manifolds`","iamatica/DiffGeometry/manifolds.m"];
+Needs["Objects`","ivamatica/Basic/objects.m"];
+Needs["Euclidean`","ivamatica/DiffGeometry/euclidean.m"];
+Needs["Bundles`","ivamatica/DiffGeometry/bundles.m"];
+Needs["Vectors`","ivamatica/DiffGeometry/vectors.m"];
+Needs["Tangents`","ivamatica/DiffGeometry/tangents.m"];
+Needs["Manifolds`","ivamatica/DiffGeometry/manifolds.m"];
 
 
 (*--Define objects--*)

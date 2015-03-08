@@ -8,9 +8,13 @@
 
   Author:   Patricio Vela
 *)
-BeginPackage["ExSE2`"];
+(*BeginPackage["ExSE2`"];*)
+
+(*Needs["Euclidean`","ivamatica/DiffGeometry/Euclidean.m"];*)
+(*Needs["SE2`","ivamatica/GeoMechanics/SE2.m"];*)
 
 ExSE2::usage="Provides functionality of principal bundle Q = R^n x SE(2)";
+
 
 Begin["`Private`"];
 
@@ -137,4 +141,4 @@ Format[ExSE2[object_]] :=
 
 End[];
 
-EndPackage[];
+(*EndPackage[];*)

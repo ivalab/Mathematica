@@ -12,4 +12,4 @@ gBranch::usage="gBranch[g,bc]";
 
 Wedge::usage="--";
 
-<<mathematica/libs/SE2.m;
+<<ivamatica/GeoMechanics/SE2.m;

@@ -5,6 +5,9 @@
 
   Patricio Vela
 *)
+(* BeginPackage["SE2`"];*)
+
+(* Needs["Euclidean`","ivamatica/DiffGeometry/euclidean.m"];*)
 
 SE2::usage="Provides the object functionality of the SE2 group.";
 se2::usage="Provides the object functionality of the se2 Lie algebra.";
@@ -274,8 +277,7 @@ Format[dse2[alpha_]] := alpha;
 
 End[];
 
-SE2[g_] == SE2[h_] ^:=
-  Euclidean[g] == Euclidean[h];
+SE2[g_] == SE2[h_] ^:= Euclidean[g] == Euclidean[h];
 
 SE2[g_] \[CenterDot] SE2[h_] ^:= 
   SE2[{  h[[1]] Cos[g[[3]]] - h[[2]] Sin[g[[3]]] + g[[1]],
@@ -296,3 +298,5 @@ dse2[xi_] + dse2[eta_] ^:=  dse2[xi + eta];
 
 a_ * se2[xi_] ^:= se2[a * xi];
 
+
+(* EndPackage[]; *)

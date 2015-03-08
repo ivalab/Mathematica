@@ -103,7 +103,7 @@ fMakeMovie[basedir_, basename_, thegrafx_] := Module[
   For[i=1, i <= mlen, i++, 
     Export[ fnames[[i]], thegrafx[[i]] ];
     Run["convert " <> fnames[[i]] <> " " <> jnames[[i]] ] ];
-  Run["cd " <> basedir <> "; ~/mathematica/libs/makempeg -fs 1 -fe " <> ToString[mlen] <> 
+  Run["cd " <> basedir <> "; ~/ivamatica/Anim/makempeg -fs 1 -fe " <> ToString[mlen] <> 
     " -fi 1 -base " <> basename <> " -ext jpg"];
 ];
 

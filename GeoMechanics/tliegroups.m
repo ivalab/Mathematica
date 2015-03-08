@@ -30,6 +30,6 @@ Begin["`Private`"];
 
 End[];
 
-<<mathematica/libs/TSE.m;
+<<ivamatica/GeoMechanics/TSE.m;
 
 EndPackage[];

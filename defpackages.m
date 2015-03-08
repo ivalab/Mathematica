@@ -1,8 +1,8 @@
 (*--Defines the constants that allow one to specify the loading
   of certain objects.--*)
 
-<<ivamatica/Basic/objects.m
-<<ivamatica/Math/binary.m;
+<<"ivamatica/Basic/objects.m";
+<<"ivamatica/Math/binary.m";
 
 oPLEN = 11;
 
