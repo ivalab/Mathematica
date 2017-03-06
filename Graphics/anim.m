@@ -94,17 +94,17 @@ fMakeMovie[basedir_, basename_, thegrafx_] := Module[
   mlen = Length[thegrafx];
   fnames = Table[ basedir <> "/" <> basename <> "." <> 
     ToString[PaddedForm[i, 4, NumberPadding -> {"0","0"},
-    NumberSigns -> {"", ""}]] <> ".eps",  
+    NumberSigns -> {"", ""}]] <> ".png",  
     {i,mlen}];
-  jnames = Table[ basedir <> "/" <> basename <> "." <> 
+  (*jnames = Table[ basedir <> "/" <> basename <> "." <> 
     ToString[PaddedForm[i, 4, NumberPadding -> {"0","0"},
     NumberSigns -> {"", ""}]] <> ".jpg",  
-    {i,mlen}];
+    {i,mlen}];*)
   For[i=1, i <= mlen, i++, 
-    Export[ fnames[[i]], thegrafx[[i]] ];
-    Run["convert " <> fnames[[i]] <> " " <> jnames[[i]] ] ];
-  Run["cd " <> basedir <> "; ~/ivamatica/Anim/makempeg -fs 1 -fe " <> ToString[mlen] <> 
-    " -fi 1 -base " <> basename <> " -ext jpg"];
+    Export[ fnames[[i]], thegrafx[[i]] ]; ];
+    (*Run["convert " <> fnames[[i]] <> " " <> jnames[[i]] ] *)
+  (*Run["cd " <> basedir <> "; ~/ivamatica/Anim/makempeg -fs 1 -fe " <> ToString[mlen] <> 
+    " -fi 1 -base " <> basename <> " -ext jpg"];*)
 ];
 
 End[];
